@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TTGServerAPI.Services;
 
 namespace TTGServerAPI.Controllers
 {
@@ -9,6 +10,7 @@ namespace TTGServerAPI.Controllers
         [HttpGet]
         public string TestGet()
         {
+            InfoService service = new InfoService(new TTG_ver3Context());
             return "OK";
         }
     }
