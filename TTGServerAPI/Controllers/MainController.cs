@@ -31,5 +31,21 @@ namespace TTGServerAPI.Controllers
 
             return service.GetStationsMapInfoByWayName(wayName);
         }
+
+        [HttpGet(@"Info/GetWayNamesList")]
+        public IEnumerable<string> GetWayNamesList()
+        {
+            InfoService service = new InfoService(new TTG_ver3Context());
+
+            return service.GetAllWayNames();
+        }
+
+        [HttpGet(@"Authorization/Login/{category}&{login}&{password}")]
+        public IProfileServiceModel GetAuthorization(char category, string login, string password)
+        {
+            AuthorizationService service = new AuthorizationService(new TTG_ver3Context());
+
+            return service.LogIn(category, login, password);
+        }
     }
 }
