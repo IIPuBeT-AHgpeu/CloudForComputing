@@ -14,5 +14,15 @@
         {
             return Context.Ways.Select(way => way.Name).OrderBy(name => name).ToList();
         }
+        public void UpdateUnitStatus(string number, string newStatus)
+        {
+            if(newStatus == "Эусплуатируется" || newStatus == "Ремонтируется")
+            {
+                 Unit unit = Context.Units.First(unit => unit.Number == number);
+
+                 unit.Status = newStatus;
+                 Context.SaveChanges();
+            }
+        }
     }
 }

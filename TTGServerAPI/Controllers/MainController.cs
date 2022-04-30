@@ -40,6 +40,20 @@ namespace TTGServerAPI.Controllers
             return service.GetAllWayNames();
         }
 
+        [HttpPut(@"Info/UpdateOwner/{currentLogin}")]
+        public void PutOwnerInfo(string currentLogin, [FromBody]OwnerServiceModel owner)
+        {
+            //to be continue...
+        }
+
+        [HttpPut(@"Info/UpdateUnitStatus/{number}")]
+        public void PutUnitStatus(string number, [FromBody]string newStatus)
+        {
+            InfoService service = new InfoService(new TTG_ver3Context());
+
+            service.UpdateUnitStatus(number, newStatus);
+        }
+
         [HttpGet(@"Authorization/Login/{category}&{login}&{password}")]
         public IProfileServiceModel GetAuthorization(char category, string login, string password)
         {
