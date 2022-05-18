@@ -15,6 +15,7 @@ namespace TTGServerAPI
         public int OwnerId { get; set; }
         public float Price { get; set; }
         public string Name { get; set; } = null!;
+        public float Rent { get; set; }
 
         public virtual Owner Owner { get; set; } = null!;
         public virtual ICollection<Station> Stations { get; set; }
