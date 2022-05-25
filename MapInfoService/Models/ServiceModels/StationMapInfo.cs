@@ -1,13 +1,12 @@
-﻿namespace TTGServerAPI.Models.ServiceModels
+﻿using MapInfoService.Models.DBModels;
+
+namespace MapInfoService.Models.ServiceModels
 {
-    public class StationMapInfo
+    public class StationMapInfo : MapInfoBase
     {
         public string? Description { get; set; }
         public string Name { get; set; }
         public int Position { get; set; }
-        public int? Waiting { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
 
         public static explicit operator StationMapInfo(Station station)
         {
@@ -16,7 +15,6 @@
                 Description = station.Description,
                 Name = station.Name,
                 Position = station.Position,
-                Waiting = station.Waiting,
                 Latitude = station.Latitude,
                 Longitude = station.Longitude,
             };
@@ -26,9 +24,8 @@
             station.Description = stationMapInfo.Description;
             station.Name = stationMapInfo.Name;
             station.Position = stationMapInfo.Position;
-            station.Waiting = stationMapInfo.Waiting;
-            station.Latitude = stationMapInfo.Latitude;
-            station.Longitude = stationMapInfo.Longitude;
+            station.Latitude = (float)stationMapInfo.Latitude;
+            station.Longitude = (float)stationMapInfo.Longitude;
 
             return station;
         }

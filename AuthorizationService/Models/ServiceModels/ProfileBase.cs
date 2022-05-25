@@ -1,10 +1,9 @@
-﻿namespace TTGServerAPI.Models.ServiceModels
+﻿namespace AuthorizationService.Models.ServiceModels
 {
-    public class OwnerProfileServiceModel : IProfileServiceModel
+    public class ProfileBase
     {
         public bool AuthIsSuccessfull { get; set; }
         public string? Name { get; set; }
-        public string? License { get; set; }
         public string AnswerDescryption { get; set; }
     }
 }

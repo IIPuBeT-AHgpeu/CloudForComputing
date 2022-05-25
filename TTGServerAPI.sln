@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTGServerAPI", "TTGServerAPI\TTGServerAPI.csproj", "{CA4FE6F9-A8E1-4795-B642-5DDA3542D379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoService", "TTGServerAPI\InfoService.csproj", "{CA4FE6F9-A8E1-4795-B642-5DDA3542D379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapInfoService", "MapInfoService\MapInfoService.csproj", "{6681F605-49D6-476A-8C68-5DC6BDB0DEE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationService", "AuthorizationService\AuthorizationService.csproj", "{0A27970F-6E79-4BCC-941D-1C772BDCEE62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{CA4FE6F9-A8E1-4795-B642-5DDA3542D379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA4FE6F9-A8E1-4795-B642-5DDA3542D379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA4FE6F9-A8E1-4795-B642-5DDA3542D379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6681F605-49D6-476A-8C68-5DC6BDB0DEE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6681F605-49D6-476A-8C68-5DC6BDB0DEE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6681F605-49D6-476A-8C68-5DC6BDB0DEE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6681F605-49D6-476A-8C68-5DC6BDB0DEE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A27970F-6E79-4BCC-941D-1C772BDCEE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A27970F-6E79-4BCC-941D-1C772BDCEE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A27970F-6E79-4BCC-941D-1C772BDCEE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A27970F-6E79-4BCC-941D-1C772BDCEE62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

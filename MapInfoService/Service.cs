@@ -1,11 +1,12 @@
-﻿using TTGServerAPI.Models.ServiceModels;
+﻿using MapInfoService.Models.DBModels;
+using MapInfoService.Models.ServiceModels;
 
-namespace TTGServerAPI.Services
+namespace MapInfoService
 {
-    public class MapInfoService : IService
+    public class Service
     {
         public TTG_ver3Context? Context { get; set; }
-        public MapInfoService(TTG_ver3Context? context)
+        public Service(TTG_ver3Context? context)
         {
             if (context == null)
                 throw new Exception("Invalid DB context!");

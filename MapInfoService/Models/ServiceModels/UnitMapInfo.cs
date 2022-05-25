@@ -1,10 +1,10 @@
-﻿namespace TTGServerAPI.Models.ServiceModels
+﻿using MapInfoService.Models.DBModels;
+
+namespace MapInfoService.Models.ServiceModels
 {
-    public class UnitMapInfo
+    public class UnitMapInfo : MapInfoBase
     {
         public string Number { get; set; } = null!;
-        public float? Latitude { get; set; }
-        public float? Longitude { get; set; }
         public bool IsFull { get; set; }
 
         static public explicit operator UnitMapInfo(Unit unit)

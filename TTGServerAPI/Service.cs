@@ -1,9 +1,11 @@
-﻿namespace TTGServerAPI.Services
+﻿using TTGServerAPI;
+
+namespace InfoService
 {
-    public class InfoService : IService
+    public class Service
     {
         public TTG_ver3Context? Context { get; set; }
-        public InfoService(TTG_ver3Context? context)
+        public Service(TTG_ver3Context? context)
         {
             if (context == null)
                 throw new Exception("Invalid DB context!");
@@ -16,12 +18,12 @@
         }
         public void UpdateUnitStatus(string number, string newStatus)
         {
-            if(newStatus == "Эусплуатируется" || newStatus == "Ремонтируется")
+            if (newStatus == "Эксплуатируется" || newStatus == "На ремонте")
             {
-                 Unit unit = Context.Units.First(unit => unit.Number == number);
+                Unit unit = Context.Units.First(unit => unit.Number == number);
 
-                 unit.Status = newStatus;
-                 Context.SaveChanges();
+                unit.Status = newStatus;
+                Context.SaveChanges();
             }
         }
     }

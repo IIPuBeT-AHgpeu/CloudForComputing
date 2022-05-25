@@ -1,12 +1,13 @@
-﻿using TTGServerAPI.Models.ServiceModels;
+﻿using AuthorizationService.Models.DBModels;
+using AuthorizationService.Models.ServiceModels;
 
-namespace TTGServerAPI.Services
+namespace AuthorizationService
 {
-    public class AuthorizationService : IService
+    public class Service
     {
         public TTG_ver3Context? Context { get; set; }
 
-        public AuthorizationService(TTG_ver3Context? context)
+        public Service(TTG_ver3Context? context)
         {
             if (context == null)
                 throw new Exception("Invalid DB context!");
@@ -14,7 +15,7 @@ namespace TTGServerAPI.Services
                 Context = context;
         }
 
-        public IProfileServiceModel LogIn(char category, string login, string password)
+        public object LogIn(char category, string login, string password)
         {
             category = category.ToString().ToUpper()[0];
 
@@ -27,18 +28,18 @@ namespace TTGServerAPI.Services
                         {
                             passenger = Context.Passengers.First(pas => pas.Login == login);
                         }
-                        catch(Exception)
+                        catch (Exception)
                         {
-                            return new PassengerProfileServiceModel()
+                            return new PassengerProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 Name = null,
                                 AnswerDescryption = "Passenger login " + login + " did not founded."
                             };
                         }
-                        if(passenger.Password == password)
+                        if (passenger.Password == password)
                         {
-                            return new PassengerProfileServiceModel()
+                            return new PassengerProfile()
                             {
                                 AuthIsSuccessfull = true,
                                 Name = passenger.Name,
@@ -47,7 +48,7 @@ namespace TTGServerAPI.Services
                         }
                         else
                         {
-                            return new PassengerProfileServiceModel() 
+                            return new PassengerProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 Name = null,
@@ -64,7 +65,7 @@ namespace TTGServerAPI.Services
                         }
                         catch (Exception)
                         {
-                            return new OwnerProfileServiceModel()
+                            return new OwnerProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 Name = null,
@@ -74,7 +75,7 @@ namespace TTGServerAPI.Services
                         }
                         if (owner.Password == password)
                         {
-                            return new OwnerProfileServiceModel()
+                            return new OwnerProfile()
                             {
                                 AuthIsSuccessfull = true,
                                 Name = owner.Name,
@@ -84,7 +85,7 @@ namespace TTGServerAPI.Services
                         }
                         else
                         {
-                            return new OwnerProfileServiceModel()
+                            return new OwnerProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 Name = null,
@@ -102,7 +103,7 @@ namespace TTGServerAPI.Services
                         }
                         catch (Exception)
                         {
-                            return new UnitProfileServiceModel()
+                            return new DriverProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 AnswerDescryption = "Unit login " + login + " did not founded."
@@ -110,7 +111,7 @@ namespace TTGServerAPI.Services
                         }
                         if (unit.Password == password)
                         {
-                            return new UnitProfileServiceModel()
+                            return new DriverProfile()
                             {
                                 AuthIsSuccessfull = true,
                                 Name = unit.Name,
@@ -123,7 +124,7 @@ namespace TTGServerAPI.Services
                         }
                         else
                         {
-                            return new UnitProfileServiceModel()
+                            return new DriverProfile()
                             {
                                 AuthIsSuccessfull = false,
                                 AnswerDescryption = "Incorrect password."
@@ -132,7 +133,7 @@ namespace TTGServerAPI.Services
                     }
                 default:
                     {
-                        return new PassengerProfileServiceModel()
+                        return new PassengerProfile()
                         {
                             AuthIsSuccessfull = false,
                             Name = null,
