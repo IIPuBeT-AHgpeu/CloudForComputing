@@ -7,7 +7,7 @@ namespace TTGServerAPI.Controllers
     [Route("[controller]")]
     public class InfoController : ControllerBase
     {
-        [HttpGet(@"Info/GetWayNamesList")]
+        [HttpGet(@"GetWayNamesList")]
         public IEnumerable<string> GetWayNamesList()
         {
             Service service = new Service(new TTG_ver3Context());
@@ -15,12 +15,18 @@ namespace TTGServerAPI.Controllers
             return service.GetAllWayNames();
         }
 
-        [HttpPut(@"Info/UpdateUnitStatus/{number}")]
+        [HttpPut(@"UpdateUnitStatus/{number}")]
         public void PutUnitStatus(string number, [FromBody]string newStatus)
         {
             Service service = new Service(new TTG_ver3Context());
 
             service.UpdateUnitStatus(number, newStatus);
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return "OK";
         }
     }
 }
