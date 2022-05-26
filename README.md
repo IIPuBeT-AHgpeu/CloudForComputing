@@ -14,7 +14,7 @@
   
 ### Графическое отображение функциональных требований к приложению ###
 
-(тут нада usecase)!
+![usecase](https://github.com/IIPuBeT-AHgpeu/CloudForComputing/blob/master/pictures/UseCase.png)
 
 ### Что разрабатывалось в рамках данного(ссылка) проекта ###
 
@@ -35,7 +35,7 @@
 
 ### ERD разработанной БД ###
 
-(здеся нада erd)
+![ERD](https://github.com/IIPuBeT-AHgpeu/CloudForComputing/blob/master/pictures/erd.jpg)
 
 ### Архитектура серверной части приложения ###
 
@@ -47,4 +47,4 @@
 + служебный класс;
 + несколько моделей для обмена данными с клиентом.
 
-(здеся бесполезную диаграммку)
+![components](https://github.com/IIPuBeT-AHgpeu/CloudForComputing/blob/master/pictures/Components.png)
